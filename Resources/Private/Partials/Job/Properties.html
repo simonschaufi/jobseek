@@ -1,0 +1,43 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+<h1>
+	<f:if condition="{dontLinkTitle} == 1">
+		<f:then>{job.name}</f:then>
+		<f:else><f:link.action action="show" arguments="{job: job.uid}" pageUid="{settings.flexform.detailsPageUid}">{job.name}</f:link.action></f:else>
+	</f:if>
+</h1>
+
+<div class="application-deadline">
+	<f:if condition="{job.deadline}">
+		<f:then>
+			<f:translate key="tx_jobseek_domain_model_job.deadline" default="Deadline" />: <f:format.date format="m/d-y">{job.deadline}</f:format.date>
+		</f:then>
+		<f:else>
+			<f:translate key="list.noDeadline" default="No deadline" />
+		</f:else>
+	</f:if>
+</div>
+
+<div class="application-body">
+	<f:if condition="{dontLinkBody} == 1">
+		<f:then>
+			<f:if condition="{job.subtitle}">
+				<f:format.html>{job.subtitle}</f:format.html>
+			</f:if>
+			<f:format.html><f:if condition="{truncate}">
+				<f:then><f:format.crop maxCharacters="{truncate}">{job.description}</f:format.crop></f:then>
+				<f:else>{job.description}</f:else>
+			</f:if></f:format.html>
+		</f:then>
+		<f:else>
+			<f:link.action action="show" arguments="{job: job.uid}" pageUid="{settings.flexform.detailsPageUid}">
+				<f:if condition="{job.subtitle}">
+					<f:format.html>{job.subtitle}</f:format.html>
+				</f:if>
+				<f:format.html><f:if condition="{truncate}">
+					<f:then><f:format.crop maxCharacters="{truncate}">{job.description}</f:format.crop></f:then>
+					<f:else>{job.description}</f:else>
+				</f:if></f:format.html>
+			</f:link.action>
+		</f:else>
+	</f:if>
+</div>

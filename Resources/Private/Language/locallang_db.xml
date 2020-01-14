@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'jobseek'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_jobseek_domain_model_job">Job</label>
+			<label index="tx_jobseek_domain_model_job.name">Name</label>
+			<label index="tx_jobseek_domain_model_job.subtitle">Subtitle</label>
+			<label index="tx_jobseek_domain_model_job.description">Description</label>
+			<label index="tx_jobseek_domain_model_job.deadline">Deadline</label>
+			<label index="tx_jobseek_domain_model_job.receipt_page">Receipt Page</label>
+			<label index="tx_jobseek_domain_model_job.groups">Groups with management access</label>
+			<label index="tx_jobseek_domain_model_job.applications">Applications</label>
+			<label index="tx_jobseek_domain_model_applicant">Applicant</label>
+			<label index="tx_jobseek_domain_model_applicant.name">Name</label>
+			<label index="tx_jobseek_domain_model_applicant.address">Address</label>
+			<label index="tx_jobseek_domain_model_applicant.zip">Zip</label>
+			<label index="tx_jobseek_domain_model_applicant.city">City</label>
+			<label index="tx_jobseek_domain_model_applicant.telephone">Telephone</label>
+			<label index="tx_jobseek_domain_model_applicant.mobile">Mobile</label>
+			<label index="tx_jobseek_domain_model_applicant.email">Email</label>
+			<label index="tx_jobseek_domain_model_applicant.birthday">Birthday</label>
+			<label index="tx_jobseek_domain_model_applicant.candidacy_passed">Candidacy Passed</label>
+			<label index="tx_jobseek_domain_model_applicant.candidacy_year">Candidacy Year</label>
+			<label index="tx_jobseek_domain_model_applicant.pedagogic_exam_passed">Pedagogic Exam Passed</label>
+			<label index="tx_jobseek_domain_model_applicant.pedagogic_exam_year">Pedagogic Exam Year</label>
+			<label index="tx_jobseek_domain_model_applicant.current_employment">Current Employment</label>
+			<label index="tx_jobseek_domain_model_applicant.current_employment_year">Current Employment Year</label>
+			<label index="tx_jobseek_domain_model_applicant.competences">Competences</label>
+			<label index="tx_jobseek_domain_model_applicant.experience">Experience</label>
+			<label index="tx_jobseek_domain_model_applicant.image">Image</label>
+			<label index="tx_jobseek_domain_model_applicant.files">Files</label>
+			<label index="tx_jobseek_domain_model_applicant.main_subject">Main Subject</label>
+			<label index="tx_jobseek_domain_model_applicant.secondary_subjects">Secondary Subjects</label>
+			<label index="tx_jobseek_domain_model_applicant.description">Application text/description</label>
+			<label index="tx_jobseek_domain_model_applicant.employments">Prevous employments</label>
+			<label index="tx_jobseek_domain_model_application">Application</label>
+			<label index="tx_jobseek_domain_model_application.rating">Rating</label>
+			<label index="tx_jobseek_domain_model_application.review_round">Review round</label>
+			<label index="tx_jobseek_domain_model_application.received">Received</label>
+			<label index="tx_jobseek_domain_model_application.applicant">Applicant</label>
+			<label index="tx_jobseek_domain_model_application.status">Status</label>
+			<label index="tx_jobseek_domain_model_application.notes">Notes</label>
+			<label index="tx_jobseek_domain_model_application.comments">Comments</label>
+			<label index="tx_jobseek_domain_model_subject">Subject</label>
+			<label index="tx_jobseek_domain_model_subject.name">Subject name</label>
+			<label index="tx_jobseek_domain_model_status">Status</label>
+			<label index="tx_jobseek_domain_model_status.name">Name</label>
+			<label index="tx_jobseek_domain_model_comment">Comment</label>
+			<label index="tx_jobseek_domain_model_comment.author">Author</label>
+			<label index="tx_jobseek_domain_model_comment.review_round">Review round</label>
+			<label index="tx_jobseek_domain_model_comment.body">Comment text</label>
+			<label index="tx_jobseek_domain_model_employment">Previous employment</label>
+			<label index="tx_jobseek_domain_model_employment.employer">Employer</label>
+			<label index="tx_jobseek_domain_model_employment.since">Since</label>
+			<label index="tx_jobseek_domain_model_employment.description">Description</label>
+
+			<!-- FlexForm setting labels -->
+			<label index="flexform.display">Display mode</label>
+			<label index="flexform.display.joblist">Job listing</label>
+			<label index="flexform.display.jobdetails">Job details</label>
+			<label index="flexform.display.jobapplication">Job application form</label>
+			<label index="flexform.display.management">Job application management</label>
+			<label index="flexform.display.print">Job application print view</label>
+			<label index="flexform.display.email">Job application mass email</label>
+			<label index="flexform.styles">Additional stylesheets</label>
+			<label index="flexform.defaultStatus">Default status</label>
+			<label index="flexform.listPageUid">Job listing page</label>
+			<label index="flexform.detailsPageUid">Job details page</label>
+			<label index="flexform.applicationPageUid">Job application form page</label>
+			<label index="flexform.receiptPageUid">Application receipt page</label>
+			<label index="flexform.printPageUid">Print application page (set this page to use a print friendly layout}</label>
+			<label index="flexform.managementPageUid">Application management page</label>
+			<label index="flexform.emailPageUid">Application mass email page</label>
+			<label index="flexform.managementFrontendGroup">Frontend usergroup with administrative access to the review process</label>
+			<label index="flexform.reviewRoundAccess.1">Frontend usergroup with access to applications marked with review round 1 (empty means all have access)</label>
+			<label index="flexform.reviewRoundAccess.2">Frontend usergroup with access to applications marked with review round 2 (empty means all have access)</label>
+			<label index="flexform.reviewRoundAccess.3">Frontend usergroup with access to applications marked with review round 3 (empty means all have access)</label>
+		</languageKey>
+	</data>
+</T3locallang>

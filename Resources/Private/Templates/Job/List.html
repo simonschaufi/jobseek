@@ -1,0 +1,12 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+<f:for each="{jobs}" as="job">
+	<div class="job-list-item">
+		<f:render partial="Job/Properties" arguments="{job: job, truncate: settings.application.list.truncateLength}" />
+	</div>
+</f:for>
+
+</f:section>

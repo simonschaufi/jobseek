@@ -1,0 +1,13 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<fed:jQuery.cdn jQueryVersion="1" jQueryUIVersion="1" compatibility="TRUE" />
+<fed:style href="{f:uri.resource(path: 'Stylesheet/Common.css')}" />
+<fed:script src="{f:uri.resource(path: 'Javascripts/Common.js')}" />
+
+<div class="tx-jobseek">
+	<f:render section="Main" />
+	<fed:data.func func="explode" arguments="{0: ',', 1: settings.flexform.styles}" as="files" />
+	<f:for each="{files}" as="file">
+		<fed:style href="{file}" />
+	</f:for>
+</div>

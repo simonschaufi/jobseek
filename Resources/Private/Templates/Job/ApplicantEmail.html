@@ -1,0 +1,43 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+<f:layout name="Default" />
+
+
+<f:section name="Main">
+
+	<fed:style href="{f:uri.resource(path: 'Stylesheet/Review.css')}" />
+
+	<div class="application-details applicant-email">
+
+		<f:if condition="{sent}">
+			<f:then>
+				<h2><f:translate key="labels.email.sentHeader" default="Email sent!" /></h2>
+				<button type="button" class="navigation-button back"
+					data-rel="{f:uri.action(action: 'reviewApplications', pageUid: settings.flexform.managementPageUid, arguments: {job: returnToJob.uid})}"><f:translate key="labels.review.navigation.back" default="Back to list" /></button>
+			</f:then>
+			<f:else>
+				<h2><f:translate key="labels.email.header" default="Write email" /></h2>
+				<f:form action="applicantEmail" arguments="{job: job.uid, application: application.uid, returnToJob: returnToJob.uid}">
+					<label for="subject"><f:translate key="labels.email.subject" default="Subject" /></label><f:form.textfield name="subject" value="{subject}" id="subject" class="text" />
+					<br />
+					<label for="body"><f:translate key="labels.email.body" default="Body" /></label> <f:form.textarea name="body" cols="8" rows="8" id="body" value="{body}" />
+					<br />
+					<f:form.hidden name="send" value="1" />
+					<label>&nbsp;</label><button type="submit"><f:translate key="labels.email.send" default="Send" /></button>
+					<button type="button" class="navigation-button back"
+						data-rel="{f:uri.action(action: 'reviewApplications', pageUid: settings.flexform.managementPageUid, arguments: {job: returnToJob.uid})}"><f:translate key="labels.review.navigation.back" default="Back to list" /></button>
+					<br />
+				</f:form>
+			</f:else>
+		</f:if>
+
+		<div class="recipient-list">
+			<h2><f:translate key="labels.email.recipients" default="Recipients" /> (<f:count>{list}</f:count>)</h2>
+			<ol>
+				<f:for each="{list}" as="application" iteration="iteration">
+					<li>{application.applicant.name} &lt;{application.applicant.email}&gt;</li>
+				</f:for>
+			</ol>
+		</div>
+	</div>
+
+</f:section>

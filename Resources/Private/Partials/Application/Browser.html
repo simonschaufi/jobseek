@@ -1,0 +1,48 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<div id="application-browser">
+	<f:if condition="{queue->f:count()} > 1">
+		<fed:data.var name="index"><fed:indexOf haystack="{queue}" needle="{application}" /></fed:data.var>
+		<fed:data.var name="position"><fed:math>{index}+1</fed:math></fed:data.var>
+		<fed:data.var name="next"><fed:next haystack="{queue}" needle="{application}" /></fed:data.var>
+		<fed:data.var name="previous"><fed:previous haystack="{queue}" needle="{application}" /></fed:data.var>
+
+
+		<span class="position">
+			<f:translate key="tx_jobseek_domain_model_application" default="Application" /> {position} <f:translate key="labels.of" default="of" /> <f:count>{queue}</f:count>
+		</span>
+		<f:if condition="{next}">
+			<f:then>
+				<button type="button" class="navigation-button next"
+					data-rel="{f:uri.action(action: 'reviewApplication', arguments: {job: job.uid, application: next.uid})}"><f:translate key="labels.review.navigation.next" default="Next" /></button>
+			</f:then>
+			<f:else>
+				<button type="button" class="navigation-button next" disabled="disabled"><f:translate key="labels.review.navigation.next" default="Next" /></button>
+			</f:else>
+		</f:if>
+		<f:if condition="{previous}">
+			<f:then>
+				<button type="button" class="navigation-button previous"
+					data-rel="{f:uri.action(action: 'reviewApplication', arguments: {job: job.uid, application: previous.uid})}"><f:translate key="labels.review.navigation.previous" default="Previous" /></button>
+			</f:then>
+			<f:else>
+				<button type="button" class="navigation-button previous" disabled="disabled"><f:translate key="labels.review.navigation.previous" default="Previous" /></button>
+			</f:else>
+		</f:if>
+	</f:if>
+
+	<f:if condition="{printButtonPrintsQueue} > 0">
+		<f:then>
+			<button type="button" class="navigation-button print"
+				data-rel="{f:uri.action(action: 'print', arguments: {job: job.uid}, pageUid: settings.flexform.printPageUid)}&print=1"><f:translate key="labels.review.navigation.print" default="Print" /></button>
+		</f:then>
+		<f:else>
+			<button type="button" class="navigation-button print"
+				data-rel="{f:uri.action(action: 'print', arguments: {job: job.uid, application: application.uid}, pageUid: settings.flexform.printPageUid)}&print=1"><f:translate key="labels.review.navigation.print" default="Print" /></button>
+		</f:else>
+	</f:if>
+
+	<button type="button" class="navigation-button back"
+		data-rel="{f:uri.action(action: 'reviewApplications', arguments: {job: job.uid}, pageUid: settings.flexform.managementPageUid)}"><f:translate key="labels.review.navigation.back" default="Back to list" /></button>
+
+</div>

@@ -1,0 +1,34 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+	<f:flashMessages />
+	
+	<fed:script src="{f:uri.resource(path: 'Stylesheet/Review.css')}" />
+
+	<fed:data.sort as="sortedJobs" objectStorage="{jobs}" sortBy="applications" order="DESC" />
+
+	<f:for each="{sortedJobs}" as="job" iteration="iteration">
+		<div class="job-list-item">
+			<f:render partial="Job/Properties" arguments="{job: job, truncate: settings.application.list.truncateLength, dontLinkTitle: 1, dontLinkBody: 1}" />
+			<div class="management-links">
+				<p>
+					<f:link.action action="reviewApplications" pageUid="{settings.flexform.managementPageUid}" arguments="{job: job.uid}">
+						<f:translate key="labels.reviewLink" default="Review applications" /> 
+						<f:if condition="{job.applications->f:count()} > 1">
+							<f:then>
+								(<f:count>{job.applications}</f:count> <f:translate key="labels.applications" />)
+							</f:then>
+							<f:else>
+								(<f:count>{job.applications}</f:count> <f:translate key="labels.application" />)
+							</f:else>
+						</f:if>
+					</f:link.action>
+				</p>
+			</div>
+		</div>
+	</f:for>
+
+</f:section>

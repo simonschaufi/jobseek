@@ -1,0 +1,106 @@
+#application-review {
+	width: 250px;
+	float: right;
+}
+
+#application-review .portrait {
+	margin-bottom: 16px;
+}
+	
+#application-review textarea {
+	margin-top: 8px;
+	width: 244px;
+	height: 100px;
+}
+
+#application-notes {
+	display: none;
+}
+
+#application-review,
+.application-details {
+	font-size: 11px;
+}
+
+.application-details label {
+	display: block;
+	float: left;
+	width: 160px;
+}
+
+.application-details br {
+	/*clear: both !important;*/
+}
+
+.dataTables_length {
+	display: none !important;
+}
+
+.job-administration-filter {
+	margin-bottom: 12px;
+	font-size: 11px;
+}
+
+.job-administration-filter input,
+.job-administration-filter select {
+	width: 80px;
+}
+
+.job-administration-filter .right {
+	float: right;
+}
+
+.job-administration-list {
+	margin-bottom: 20px;
+}
+
+.job-administration-list .rating,
+.job-administration-list .email {
+	white-space: nowrap;
+}
+
+.job-administration-list .rating img,
+.job-administration-list .email img {
+	vertical-align: -2px;
+	margin: 0px;
+	cursor: auto;
+}
+
+.job-list-item .management-links {
+	font-size: 11px;
+}
+
+.applicant-email label {
+	width: 110px;
+}
+
+.applicant-email input.text,
+.applicant-email textarea {
+	width: 350px;
+}
+
+.applicant-email textarea {
+	height: 120px;
+}
+
+.recipient-list {
+	margin-top: 15px;
+}
+
+.status-selector {
+	float: right;
+	text-align: right;
+}
+
+.comments {
+	clear: both !important;
+	margin-top: 16px;
+}
+
+.comments h4 {
+	margin-bottom: 4px;
+}
+
+.comments p {
+	margin-top: 0px;
+}

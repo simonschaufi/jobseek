@@ -1,0 +1,8 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<fed:loop count="5" iteration="iteration">
+	<f:if condition="{iteration.cycle} <= {rating}">
+		<f:then><f:image src="{f:uri.resource(path: 'Icons/StarFull.gif')}" width="11" height="11" alt="{iteration.cycle}" class="star" /></f:then>
+		<f:else><f:image src="{f:uri.resource(path: 'Icons/StarEmpty.gif')}" width="11" height="11" alt="{iteration.cycle}" class="star" /></f:else>
+	</f:if>
+</fed:loop>

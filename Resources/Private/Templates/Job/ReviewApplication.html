@@ -1,0 +1,17 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+	<f:flashMessages />
+	
+	<fed:script src="{f:uri.resource(path: 'Stylesheet/Review.css')}" />
+
+	<f:render partial="Application/Browser" arguments="{application: application, queue: queue, job: job}" />
+	<h1>{application.applicant.name}</h1>
+	<f:render partial="Application/Review" arguments="{application: application, statuses: statuses, print: 0, admin: admin, comment: comment, job: job}" />
+
+	<f:render partial="Application/Properties" arguments="{application: application}" />
+
+</f:section>

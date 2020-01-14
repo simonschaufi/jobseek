@@ -1,0 +1,76 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="Default" />
+
+<f:section name="Main">
+
+	<fed:style href="{f:uri.resource(path: 'Stylesheet/Review.css')}" />
+	<fed:script src="{f:uri.resource(path: 'Javascripts/Management.js')}" />
+
+	<f:form action="reviewApplications" arguments="{job: job.uid}" id="application-search">
+		<div class="job-administration-filter">
+			<label><f:translate key="labels.form.search" default="Search for" /> <f:form.textfield name="search" value="{search}" id="application-search-field" /></label>
+			<label><f:translate key="labels.form.inField" default="in field" /> <f:form.select name="property" options="{settings.filter.fields}" value="{property}" /></label>
+			<button type="submit">
+				<f:translate key="labels.form.searchButton" default="Search" />
+			</button>
+			<f:if condition="{search}">
+				<button type="button" class="reset-search" data-rel="{f:uri.action(action: 'reviewApplications', arguments: {job: job.uid})}">
+					<f:translate key="labels.form.reset" default="Reset" />
+				</button>
+			</f:if>
+
+			<div class="right">
+				<div id="application-browser">
+
+					<button type="button" class="navigation-button review"
+						data-rel="{f:uri.action(action: 'reviewApplication', arguments: {application: firstApplication.uid, job: job.uid})}">
+						<f:translate key="labels.form.reviewButton" default="Review" />
+					</button>
+					<button type="button" class="navigation-button print"
+						data-rel="{f:uri.action(action: 'print', arguments: {job: job.uid}, pageUid: settings.flexform.printPageUid)}&print=1">
+						<f:translate key="labels.form.printButton" default="Print" />
+					</button>
+					<f:if condition="{admin}">
+						<button type="button" class="navigation-button email"
+							data-rel="{f:uri.action(action: 'applicantEmail', pageUid: settings.flexform.emailPageUid, arguments: {returnToJob: job.uid})}">
+							<f:translate key="labels.form.emailButton" default="Email" />
+						</button>
+					</f:if>
+				</div>
+			</div>
+		</div>
+	</f:form>
+
+	<div class="job-administration-list">
+		<fed:table cellpadding="5" cellspacing="0" sortable="TRUE" bFilter="FALSE" bInfo="FALSE" bPaginate="FALSE">
+			<thead>
+				<th><f:translate key="tx_jobseek_domain_model_applicant.name" default="Name" /></th>
+				<th><f:translate key="tx_jobseek_domain_model_applicant.main_subject" default="Main subject areas" /></th>
+				<th><f:translate key="tx_jobseek_domain_model_applicant.secondary_subjects" default="Secondary subject areas" /></th>
+				<th><f:translate key="tx_jobseek_domain_model_application.rating" default="Rating" /></th>
+				<th><f:translate key="tx_jobseek_domain_model_application.status.name" default="Status" /></th>
+				<th><f:translate key="tx_jobseek_domain_model_applicant.email" default="Email" /></th>
+			</thead>
+			<f:for each="{applications}" as="application" iteration="iteration">
+				<tr>
+					<td><f:link.action action="reviewApplication" arguments="{job: job.uid, application: application.uid}">{application.applicant.name}</f:link.action></td>
+					<td>{application.applicant.mainSubject.name}</td>
+					<td>
+						<f:for each="{application.applicant.secondarySubjects}" as="subject" iteration="subjectIteration">
+							{subject.name}<f:if condition="{subjectIteration.isLast}" else=", " />
+						</f:for>
+					</td>
+					<td class="rating"><span style="display: none;">{application.rating}</span><f:render partial="Application/RatingStars" arguments="{rating: application.rating}" /></td>
+					<td>{application.status.name}</td>
+					<td class="email"><f:link.email email="{application.applicant.email}">{application.applicant.email} <f:image src="{f:uri.resource(path: 'Icons/Email.png')}" alt="{application.applicant.email}" /></f:link.email></td>
+				</tr>
+			</f:for>
+		</fed:table>
+	</div>
+
+	<div class="job-show">
+		<f:render partial="Job/Properties" arguments="{job:job, dontLinkTitle: 1, dontLinkBody: 1}" />
+	</div>
+
+</f:section>

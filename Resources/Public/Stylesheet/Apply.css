@@ -1,0 +1,115 @@
+.form * {
+	font-size: 10px !important;
+}
+
+.application-form fieldset {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+.field-set label {
+	font-size: 11px;
+	min-height: 14px;
+}
+
+.field {
+	clear: both !important;
+	margin-bottom: 5px;
+}
+
+.field-set {
+	border-bottom: 1px solid black;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+}
+
+.field-set label.main {
+	float: left;
+	width: 195px;
+	clear: left;
+	padding-top: 6px;
+}
+
+.field-set label.sublabel {
+	width: 150px;
+	display: inline-block;
+	text-align: right;
+}
+
+.field-set label.sublabel.small {
+	width: 50px;
+}
+
+.field input {
+	border-width: 1px;
+}
+
+.field .text,
+.field select {
+	width: 299px;
+}
+
+.field textarea {
+	width: 297px;
+}
+
+.field .checkbox {
+	margin-top: 7px;
+	vertical-align: -1px;
+	border: none;
+}
+
+#applicant-zip {
+	width: 50px;
+}
+
+#applicant-city {
+	width: 180px;
+}
+
+.subjects {
+	float: right;
+	width: 320px;
+	text-align: left;
+}
+
+.subjects label {
+	display: block;
+}
+
+.thumbnail,
+.button {
+	clear: right;
+	float: right;
+	width: 150px;
+	text-align: center;
+}
+
+#fileuploader_dropbox,
+#imageuploader_dropbox,
+.plupload_header {
+	display: none !important;
+}
+
+.field-set .field .depends-on-applicant-candidacy-passed,
+.field-set .field .depends-on-applicant-pedagogic-exam-passed {
+	display: none;
+}
+
+.subjects label {
+	width: 50%;
+	float: left;
+	height: 25px;
+}
+
+textarea.application {
+	margin-top: 5px;
+	width: 500px;
+	height: 150px;
+}
+
+select.form-field-group-count {
+	width: auto;
+}
+

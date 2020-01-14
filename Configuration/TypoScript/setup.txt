@@ -1,0 +1,76 @@
+plugin.tx_jobseek {
+	view {
+		templateRootPath = {$plugin.tx_jobseek.view.templateRootPath}
+		partialRootPath = {$plugin.tx_jobseek.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_jobseek.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_jobseek.persistence.storagePid}
+	}
+}
+
+plugin.tx_jobseek.settings {
+	application.reviewRounds = 3
+	application.list.truncateLength = 300
+	application.form.numberOfSecondarySubjects = 2
+	application.form.maximumEmploymentHistoryGroups = 5
+	filter.fields {
+		applicant = Name
+		applicant_mainSubject = Main subject
+		applicant_secondarySubjects = Subjects
+		status = Status
+		rating = Rating
+	}
+	massEmailFrom.email = admin@localhost
+	massEmailFrom.name = Admin
+	receiptEmailEnabled = 1
+	receiptEmailFrom.email = admin@localhost
+	receiptEmailFrom.name = Admin
+	receiptEmailSubject = Your application has been received
+	receiptEmailBody (
+Dear %s
+
+Your application was received.
+)
+	receiptEmailSignature (
+Kind regards,
+Website admin
+)
+	receiptEmailApplicantProperties = name,address,zip,city,email,telephone,mobile
+}
+
+plugin.tx_jobseek._CSS_DEFAULT_STYLE (
+	.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-jobseek table {
+
+	}
+
+	.tx-jobseek table th {
+		font-weight:bold;
+	}
+
+	.tx-jobseek table td {
+		vertical-align:top;
+	}
+)
+
+jobseekAjaxFormValidation = PAGE
+jobseekAjaxFormValidation {
+	typeNum = 1321377151
+	headerData >
+	config {
+		no_cache=1
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:text/plain
+	}
+	10 = USER_INT
+	10 {
+		userFunc = tx_fed_core_bootstrap->run
+		extensionName = Jobseek
+		pluginName = App
+	}
+}

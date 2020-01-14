@@ -1,0 +1,139 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<fed:data.var name="squote">'</fed:data.var>
+<fed:script>
+	var application = {
+		"uid": '<fed:data.var name="application.uid" />',
+		"rating": '<fed:data.var name="application.rating" />',
+		"reviewRound": '<fed:data.var name="application.reviewRound" />',
+		"notes": '<fed:data.func func="str_replace" arguments="{0: squote, 1: '', 2: application.notes}" />',
+		"status": '<fed:data.var name="application.status.uid" />'
+	};
+	function updateApplication() {
+		application.notes = jQuery('#application-notes').val();
+		application.status = jQuery('#application-status').val();
+		application.reviewRound = jQuery('#application-review-round').val();
+		jQuery.ajax({
+			"url": '/<f:uri.action action="updateApplication" />',
+			"data": {
+				"tx_jobseek_app": {
+					"application": {
+						"__identity": application.uid,
+						"rating": application.rating,
+						"reviewRound": application.reviewRound,
+						"notes": application.notes.replace("'", ''),
+						"status": application.status
+					}
+				}
+			},
+			"type": 'post',
+			"async": false,
+			"complete": updateRatingIcons
+		});
+	};
+	function updateRatingIcons(request) {
+		if (request.responseText == '1') {
+			for (var i=1; i<=5; i++) {
+				var newIcon;
+				if (i <= application.rating) {
+					newIcon = jQuery('<f:image src="{f:uri.resource(path: 'Icons/StarFull.gif')}" width="11" height="11" class="star" alt="" />').attr('alt', i);
+				} else {
+					newIcon = jQuery('<f:image src="{f:uri.resource(path: 'Icons/StarEmpty.gif')}" width="11" height="11" class="star" alt="" />').attr('alt', i);
+				};
+				jQuery('#application-review .star[alt="' + i + '"]').replaceWith(newIcon);
+			};
+		} else {
+			alert('Errors occurred while updating application - please contact your system administrator');
+		};
+	};
+	jQuery(document).ready(function() {
+		jQuery('#application-status, #application-notes, #application-review-round').change(function() {
+			updateApplication();
+		});
+	});
+</fed:script>
+<f:if condition="{admin}">
+	<fed:script>
+		jQuery(document).ready(function() {
+			jQuery('#application-review .star').live('click', function() {
+				application.rating = jQuery(this).attr('alt');
+				updateApplication();
+			});
+		});
+	</fed:script>
+</f:if>
+
+<div id="application-review">
+	<f:if condition="{application.applicant.image}">
+		<f:image src="uploads/tx_jobseek/{application.applicant.image}" alt="{application.applicant.image}" width="250c" class="portrait" />
+	</f:if>
+	<h3><f:translate key="labels.evaluation" default="Evaluation" /></h3>
+	<f:if condition="{print} == 0">
+		<f:then>
+			<div class="status-selector">
+
+				<f:translate key="tx_jobseek_domain_model_status.name" default="Status" />
+				<f:if condition="{admin}">
+					<f:then>
+						<select id="application-status">
+						<f:for each="{statuses}" as="status">
+							<f:if condition="{application.status.uid} == {status.uid}">
+								<f:then>
+									<option value="{status.uid}" selected="selected">{status.name}</option>
+								</f:then>
+								<f:else>
+									<option value="{status.uid}">{status.name}</option>
+								</f:else>
+							</f:if>
+						</f:for>
+						</select>
+					</f:then>
+					<f:else>
+						{application.status.name}
+					</f:else>
+				</f:if>
+				<br />
+				<f:translate key="tx_jobseek_domain_model_application.review_round" default="Review round" />
+				<f:if condition="{admin}">
+					<f:then>
+						<select id="application-review-round">
+							<fed:loop count="{settings.application.reviewRounds}" iteration="loop">
+								<f:if condition="{application.reviewRound} == {loop.cycle}">
+									<f:then>
+										<option value="{loop.cycle}" selected="selected">{loop.cycle}</option>
+									</f:then>
+									<f:else>
+										<option value="{loop.cycle}">{loop.cycle}</option>
+									</f:else>
+								</f:if>
+							</fed:loop>
+						</select>
+					</f:then>
+					<f:else>
+						{application.reviewRound}
+					</f:else>
+				</f:if>
+				
+			</div>
+			<f:render partial="Application/RatingStars" arguments="{rating: application.rating}" />
+			<textarea id="application-notes"><fed:data.func func="str_replace" arguments="{0: squote, 1: '', 2: application.notes}" /></textarea>
+		</f:then>
+		<f:else>
+			<f:render partial="Application/RatingStars" arguments="{rating: application.rating}" />
+			<div class="status-selector">
+				<f:translate key="tx_jobseek_domain_model_status.name" default="Status" />: {application.status.name}
+			</div>
+			<div class="status-selector">
+				<f:translate key="tx_jobseek_domain_model_application.review_round" default="Review round" />: {application.reviewRound}
+			</div>
+			<br />
+			<br />
+			{application.notes}
+		</f:else>
+	</f:if>
+	
+	<div class="comments">
+		<f:render partial="Application/Comments" arguments="{job: job, application: application, comment: comment, admin: admin}" />
+	</div>
+	
+</div>

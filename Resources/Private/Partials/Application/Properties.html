@@ -1,0 +1,63 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<div class="application-details">
+	<label><f:translate key="tx_jobseek_domain_model_applicant.address" default="Address" /></label>{application.applicant.address}<br />
+	<label><f:translate key="tx_jobseek_domain_model_applicant.zip" default="Zip" />, <f:translate key="tx_jobseek_domain_model_applicant.city" default="City" /></label>{application.applicant.zip} {application.applicant.city}<br />
+	<label><f:translate key="tx_jobseek_domain_model_applicant.telephone" default="Telephone" /></label>{application.applicant.telephone}<br />
+	<label><f:translate key="tx_jobseek_domain_model_applicant.mobile" default="Mobile" /></label>{application.applicant.mobile}<br />
+	<label><f:translate key="tx_jobseek_domain_model_applicant.email" default="Email" /></label><f:link.email email="{application.applicant.email}">{application.applicant.email}</f:link.email>
+		<f:image src="{f:uri.resource(path: 'Icons/Email.png')}" alt="Email" class="icon" /><br />
+	<label><f:translate key="tx_jobseek_domain_model_applicant.birthday" default="Birthday" /></label>{application.applicant.birthday}<br />
+
+	<h3><f:translate key="labels.qualifications" default="Qualifications" /></h3>
+	<label><f:translate key="tx_jobseek_domain_model_applicant.main_subject" default="Main subject" /></label>{application.applicant.mainSubject.name}<br />
+	<f:for each="{application.applicant.secondarySubjects}" as="subject" iteration="iteration">
+		<label><f:translate key="tx_jobseek_domain_model_subject" default="Secondary subjects" /> {iteration.cycle}</label>{subject.name}<br />
+	</f:for>
+	<f:if condition="{application.applicant.candidacyPassed}">
+		<f:then>
+			<label><f:translate key="tx_jobseek_domain_model_applicant.candidacy_year" default="Candidacy year" /></label>{application.applicant.candidacyYear}
+		</f:then>
+		<f:else>
+			<f:translate key="labels.candidacyNotPassed" default="Candidacy not passed" />
+		</f:else>
+	</f:if><br />
+	<f:if condition="{application.applicant.pedagogicExamPassed}">
+		<f:then>
+			<label><f:translate key="tx_jobseek_domain_model_applicant.pedagogic_exam_passed" default="Exam passed" /></label>{application.applicant.pedagogicExamYear}
+		</f:then>
+		<f:else>
+			<f:translate key="labels.examNotPassed" default="Exam not passed" />
+		</f:else>
+	</f:if><br />
+
+	<f:for each="{application.applicant.employments}" as="employment" iteration="iteration">
+		<h3><f:translate key="tx_jobseek_domain_model_employment" default="Employment" /> {iteration.cycle}</h3>
+		<div>
+			<label><f:translate key="tx_jobseek_domain_model_employment.employer" /></label><div>{employment.employer}</div>
+			<label><f:translate key="tx_jobseek_domain_model_employment.since" /></label><div>{employment.since}</div>
+			<br />
+			<div>{employment.description}</div>
+		</div>
+	</f:for>
+
+	<h3><f:translate key="tx_jobseek_domain_model_applicant.competences" default="Competences" /></h3>
+	<f:format.nl2br>{application.applicant.competences}</f:format.nl2br>
+
+	<h3><f:translate key="tx_jobseek_domain_model_applicant.experience" default="Experience" /></h3>
+	<f:format.nl2br>{application.applicant.experience}</f:format.nl2br>
+
+	<f:if condition="{application.applicant.files}">
+		<h3><f:translate key="tx_jobseek_domain_model_applicant.files" default="Files / CV" /></h3>
+
+		<fed:data.func func="explode" arguments="{0: ',', 1: application.applicant.files}" as="files" />
+		<ul>
+		<f:for each="{files}" as="file">
+			<li><a href="uploads/tx_jobseek/{file}" target="_blank">{file}</a></li>
+		</f:for>
+		</ul>
+	</f:if>
+
+	<h3><f:translate key="section.application" default="Application" /></h3>
+	<f:format.nl2br>{application.applicant.description}</f:format.nl2br>
+</div>

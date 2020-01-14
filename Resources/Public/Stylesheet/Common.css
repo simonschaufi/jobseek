@@ -1,0 +1,53 @@
+.job-list-item {
+	margin-bottom: 18px;
+}
+
+.job-list-item .application-deadline,
+.job-show .application-deadline {
+	margin-bottom: 1em;
+}
+
+.job-administration-list {
+	font-size: 11px;
+	margin-bottom: 18px;
+}
+
+.star {
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.application-details ul {
+	magin: 0px;
+	padding: 0px;
+	list-style: none !important;
+}
+
+#application-browser {
+	clear: both !important;
+	margin-bottom: 12px;
+	text-align: center;
+	min-height: 16px;
+	margin-bottom: 2em;
+	min-width: 140px;
+	white-space: nowrap !important;
+}
+
+#application-browser .print,
+#application-browser .next {
+	float: right;
+}
+
+#application-browser .back,
+#application-browser .previous {
+	float: left;
+}
+
+.icon {
+	vertical-align: -2px;
+	margin-bottom: -3px;
+}
+
+.errors {
+	margin-bottom: 16px;
+}

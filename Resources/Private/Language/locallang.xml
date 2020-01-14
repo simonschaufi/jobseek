@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Job Listing and Application extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_jobseek_domain_model_job">Job opening</label>
+			<label index="tx_jobseek_domain_model_job.name">Job name</label>
+			<label index="tx_jobseek_domain_model_job.description">Job description</label>
+			<label index="tx_jobseek_domain_model_job.deadline">Application deadline</label>
+			<label index="tx_jobseek_domain_model_job.receipt_page">Page UID of receipt page</label>
+			<label index="tx_jobseek_domain_model_job.applications">Job applications</label>
+			<label index="tx_jobseek_domain_model_applicant">Job applicant</label>
+			<label index="tx_jobseek_domain_model_applicant.name">name</label>
+			<label index="tx_jobseek_domain_model_applicant.address">Address</label>
+			<label index="tx_jobseek_domain_model_applicant.zip">Zip code</label>
+			<label index="tx_jobseek_domain_model_applicant.city">City</label>
+			<label index="tx_jobseek_domain_model_applicant.telephone">Telephone</label>
+			<label index="tx_jobseek_domain_model_applicant.mobile">Mobile</label>
+			<label index="tx_jobseek_domain_model_applicant.email">Email address</label>
+			<label index="tx_jobseek_domain_model_applicant.birthday">Social security number</label>
+			<label index="tx_jobseek_domain_model_applicant.candidacy_passed">Candidacy passed</label>
+			<label index="tx_jobseek_domain_model_applicant.candidacy_year">Candidacy year</label>
+			<label index="tx_jobseek_domain_model_applicant.pedagogic_exam_passed">Pedagogic exam passed</label>
+			<label index="tx_jobseek_domain_model_applicant.pedagogic_exam_year">Pedagogic exam year</label>
+			<label index="tx_jobseek_domain_model_applicant.current_employment">Current employment</label>
+			<label index="tx_jobseek_domain_model_applicant.current_employment_year">Employment year</label>
+			<label index="tx_jobseek_domain_model_applicant.competences">Competences</label>
+			<label index="tx_jobseek_domain_model_applicant.experience">Experience</label>
+			<label index="tx_jobseek_domain_model_applicant.files">Files</label>
+			<label index="tx_jobseek_domain_model_applicant.main_subject">Main subject area</label>
+			<label index="tx_jobseek_domain_model_applicant.secondary_subjects">Secondary subject areas</label>
+			<label index="tx_jobseek_domain_model_applicant.description">Application text/description</label>
+			<label index="tx_jobseek_domain_model_applicant.employments">Previous employments</label>
+			<label index="tx_jobseek_domain_model_application">Application</label>
+			<label index="tx_jobseek_domain_model_application.rating">Application relevancy rating</label>
+			<label index="tx_jobseek_domain_model_application.review_round">Review round number</label>
+			<label index="tx_jobseek_domain_model_application.received">Received date</label>
+			<label index="tx_jobseek_domain_model_application.applicant">Job applicant</label>
+			<label index="tx_jobseek_domain_model_application.status">Application status</label>
+			<label index="tx_jobseek_domain_model_application.notes">Application notes</label>
+			<label index="tx_jobseek_domain_model_application.comments">Comments</label>
+			<label index="tx_jobseek_domain_model_subject">Subject</label>
+			<label index="tx_jobseek_domain_model_status">Application status</label>
+			<label index="tx_jobseek_domain_model_status.name">Status name</label>
+			<label index="tx_jobseek_domain_model_comment">Comment</label>
+			<label index="tx_jobseek_domain_model_comment.author">Author</label>
+			<label index="tx_jobseek_domain_model_comment.review_round">Review round</label>
+			<label index="tx_jobseek_domain_model_comment.body">Comment text</label>
+			<label index="tx_jobseek_domain_model_employment">Previous employment</label>
+			<label index="tx_jobseek_domain_model_employment.employer">Employer's name</label>
+			<label index="tx_jobseek_domain_model_employment.since">Employment period</label>
+			<label index="tx_jobseek_domain_model_employment.description">Employment notes</label>
+
+			<!-- List view -->
+			<label index="list.noDeadline">No deadline</label>
+
+			<!-- Show view -->
+			<label index="section.personalDetails">Personal details</label>
+			<label index="section.qualifications">Qualifications</label>
+			<label index="section.education">Education and employment history</label>
+			<label index="section.employment">Employment history</label>
+			<label index="section.application">Application</label>
+			<label index="section.files">Files / CV</label>
+			<label index="section.image">Portrait</label>
+
+			<!-- Common labels -->
+			<label index="labels.of">of</label>
+			<label index="labels.employments.zeroLabel">None</label>
+			<label index="labels.qualifications">Qualifications</label>
+			<label index="labels.educationAndEmployment">Qualifications</label>
+			<label index="labels.candidacyNotPassed">Candidacy not passed</label>
+			<label index="labels.examNotPassed">Exam not passed</label>
+			<label index="labels.applyForJob">Apply for job</label>
+			<label index="labels.reviewLink">Review applications for this job opening</label>
+			<label index="labels.crop">Crop</label>
+			<label index="labels.reset">Reset</label>
+			<label index="labels.comments">Comments</label>
+			<label index="labels.noImage">No image uploaded</label>
+			<label index="labels.noComments">No comments yet</label>
+			<label index="labels.application">application</label>
+			<label index="labels.applications">applications</label>
+			<label index="labels.evaluation">Evaluation</label>
+
+			<!-- Form labels -->
+			<label index="labels.form.submit">Send application</label>
+			<label index="labels.form.search">Search for</label>
+			<label index="labels.form.reset">Reset</label>
+			<label index="labels.form.inField">in field</label>
+			<label index="labels.form.searchButton">Filter</label>
+			<label index="labels.form.reviewButton">Review</label>
+			<label index="labels.form.printButton">Print</label>
+			<label index="labels.form.emailButton">Email</label>
+			<label index="labels.form.commentButton">Send comment</label>
+			<label index="labels.form.errors">Errors occurred. Check your entered values - fields with errors are highlighted</label>
+
+			<!-- Application Navigation labels -->
+			<label index="labels.review.navigation.previous">Previous</label>
+			<label index="labels.review.navigation.next">Next</label>
+			<label index="labels.review.navigation.print">Print</label>
+			<label index="labels.review.navigation.back">Back to list</label>
+
+			<!-- Applicant Email messaging -->
+			<label index="labels.email.sentHeader">Message sent!</label>
+			<label index="labels.email.header">Write message to recipients</label>
+			<label index="labels.email.subject">Message subject</label>
+			<label index="labels.email.body">Message</label>
+			<label index="labels.email.send">Send message</label>
+			<label index="labels.email.preview">Preview message before sending</label>
+			<label index="labels.email.ready">Message is ready to be sent</label>
+			<label index="labels.email.recipients">Message recipients</label>
+
+		</languageKey>
+
+		<languageKey index="dk" type="array">
+			<label index="tx_jobseek_domain_model_job">Jobopslag</label>
+			<label index="tx_jobseek_domain_model_job.name">Job</label>
+			<label index="tx_jobseek_domain_model_job.description">Jobbeskrivelse</label>
+			<label index="tx_jobseek_domain_model_job.deadline">Ansøgningsfrist</label>
+			<label index="tx_jobseek_domain_model_job.receipt_page">Kvittering-side</label>
+			<label index="tx_jobseek_domain_model_job.applications">Jobansøgninger</label>
+			<label index="tx_jobseek_domain_model_applicant">Jobansøger</label>
+			<label index="tx_jobseek_domain_model_applicant.name">Navn</label>
+			<label index="tx_jobseek_domain_model_applicant.address">Adresse</label>
+			<label index="tx_jobseek_domain_model_applicant.zip">Postnr.</label>
+			<label index="tx_jobseek_domain_model_applicant.city">By</label>
+			<label index="tx_jobseek_domain_model_applicant.telephone">Telefon 1</label>
+			<label index="tx_jobseek_domain_model_applicant.mobile">Telefon 2</label>
+			<label index="tx_jobseek_domain_model_applicant.email">Email</label>
+			<label index="tx_jobseek_domain_model_applicant.birthday">CPR-nummer</label>
+			<label index="tx_jobseek_domain_model_applicant.candidacy_passed">Kandidat</label>
+			<label index="tx_jobseek_domain_model_applicant.candidacy_year">Kandidat år</label>
+			<label index="tx_jobseek_domain_model_applicant.pedagogic_exam_passed">Pædagogikum</label>
+			<label index="tx_jobseek_domain_model_applicant.pedagogic_exam_year">Bestået år</label>
+			<label index="tx_jobseek_domain_model_applicant.current_employment">Nuværende ansættelse</label>
+			<label index="tx_jobseek_domain_model_applicant.current_employment_year">Ansat årstal</label>
+			<label index="tx_jobseek_domain_model_applicant.competences">Relevante kompetencer</label>
+			<label index="tx_jobseek_domain_model_applicant.experience">Relevant erfaring</label>
+			<label index="tx_jobseek_domain_model_applicant.files">Filer / CV</label>
+			<label index="tx_jobseek_domain_model_applicant.main_subject">Hovedfag</label>
+			<label index="tx_jobseek_domain_model_applicant.secondary_subjects">Sidefag</label>
+			<label index="tx_jobseek_domain_model_applicant.description">Ansøgnings-tekst (brug kun almindelig tekst)</label>
+			<label index="tx_jobseek_domain_model_applicant.employments">Tidligere ansættelser</label>
+			<label index="tx_jobseek_domain_model_application">Ansøgning</label>
+			<label index="tx_jobseek_domain_model_application.rating">Vurdering</label>
+			<label index="tx_jobseek_domain_model_application.review_round">Evaluerings-runde</label>
+			<label index="tx_jobseek_domain_model_application.received">Modtaget dato</label>
+			<label index="tx_jobseek_domain_model_application.applicant">Jobansøger</label>
+			<label index="tx_jobseek_domain_model_application.status">Status</label>
+			<label index="tx_jobseek_domain_model_application.notes">Noter</label>
+			<label index="tx_jobseek_domain_model_application.comments">Kommentarer</label>
+			<label index="tx_jobseek_domain_model_subject">Fag</label>
+			<label index="tx_jobseek_domain_model_status">Status</label>
+			<label index="tx_jobseek_domain_model_status.name">Status</label>
+			<label index="tx_jobseek_domain_model_comment">Kommentar</label>
+			<label index="tx_jobseek_domain_model_comment.author">Forfatter</label>
+			<label index="tx_jobseek_domain_model_comment.review_round">Evaluerings-runde</label>
+			<label index="tx_jobseek_domain_model_comment.body">Kommentar-tekst</label>
+			<label index="tx_jobseek_domain_model_employment">Tidligere ansættelse</label>
+			<label index="tx_jobseek_domain_model_employment.employer">Arbejdsgivers navn</label>
+			<label index="tx_jobseek_domain_model_employment.since">Ansat i perioden</label>
+			<label index="tx_jobseek_domain_model_employment.description">Job-beskrivelse</label>
+
+			<!-- List view -->
+			<label index="list.noDeadline">Ingen ansøgningsfrist</label>
+
+			<!-- Show view -->
+			<label index="section.personalDetails">Personoplysninger</label>
+			<label index="section.qualifications">Kvalifikationer</label>
+			<label index="section.education">Uddannelse og ansættelse</label>
+			<label index="section.employment">Tidligere ansættelser</label>
+			<label index="section.application">Ansøgning</label>
+			<label index="section.files">Filer / CV</label>
+			<label index="section.image">Portræt</label>
+
+			<!-- Common labels -->
+			<label index="labels.of">af</label>
+			<label index="labels.employments.zeroLabel">Ingen</label>
+			<label index="labels.qualifications">Kvalifikationer</label>
+			<label index="labels.educationAndEmployment">Uddannelse og erhvervserfaring</label>
+			<label index="labels.candidacyNotPassed">Kandidat ikke bestået</label>
+			<label index="labels.examNotPassed">Eksamen ikke bestået</label>
+			<label index="labels.applyForJob">Søg dette job</label>
+			<label index="labels.reviewLink">Gennemgå ansøgninger for dette jobopslag</label>
+			<label index="labels.deadline">Gennemgå ansøgninger for dette jobopslag</label>
+			<label index="labels.crop">Beskær</label>
+			<label index="labels.reset">Nulstil</label>
+			<label index="labels.comments">Kommentarer</label>
+			<label index="labels.noImage">Intet billede uploaded</label>
+			<label index="labels.noComments">Ingen kommentarer endnu</label>
+			<label index="labels.application">ansøgning</label>
+			<label index="labels.applications">ansøgninger</label>
+			<label index="labels.evaluation">Evaluering</label>
+
+
+			<!-- Form labels -->
+			<label index="labels.form.submit">Send jobansøgning</label>
+			<label index="labels.form.search">Søg efter</label>
+			<label index="labels.form.reset">Nulstil</label>
+			<label index="labels.form.inField">i feltet</label>
+			<label index="labels.form.searchButton">Filtrér</label>
+			<label index="labels.form.reviewButton">Gennemgå</label>
+			<label index="labels.form.printButton">Print</label>
+			<label index="labels.form.emailButton">Send masse-email</label>
+			<label index="labels.form.commentButton">Send kommentar</label>
+			<label index="labels.form.errors">Der er fejl i dine indtastninger - kontroller indtastningerne. Felter med fejl er er highlightede.</label>
+
+			<!-- Application Navigation labels -->
+			<label index="labels.review.navigation.previous">Forrige</label>
+			<label index="labels.review.navigation.next">Næste</label>
+			<label index="labels.review.navigation.print">Print</label>
+			<label index="labels.review.navigation.back">Tilbage til listen</label>
+
+			<!-- Applicant Email messaging -->
+			<label index="labels.email.sentHeader">Besked sendt!</label>
+			<label index="labels.email.header">Skriv besked til alle modtagere</label>
+			<label index="labels.email.subject">Beskedens emne</label>
+			<label index="labels.email.body">Besked</label>
+			<label index="labels.email.send">Send besked</label>
+			<label index="labels.email.preview">Forhåndsvisning før afsendelse</label>
+			<label index="labels.email.ready">Beskeden er klar til at blive sendt</label>
+			<label index="labels.email.recipients">Modtagere</label>
+
+		</languageKey>
+
+	</data>
+</T3locallang>

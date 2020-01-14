@@ -1,0 +1,19 @@
+
+.application {
+	page-break-before: always;
+	page-break-inside: avoid;
+	margin-top: 16px;
+}
+
+.application h3 {
+	margin-top: 16px;
+}
+
+.application textarea {
+	border: none !important;
+	background: none !important;
+}
+
+.application-details {
+	width: 500px !important;
+}

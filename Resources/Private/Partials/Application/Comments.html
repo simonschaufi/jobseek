@@ -1,0 +1,20 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<h3><f:translate key="labels.comments" default="Comments" /></h3>
+<f:if condition="{application.comments}">
+	<f:then>
+		<f:for each="{application.comments}" as="com" iteration="iteration">
+			<h4>{iteration.cycle}. {com.author} (<f:translate key="tx_jobseek_domain_model_comment.review_round" default="round" /> {com.reviewRound})</h4>
+			<p>{com.body}</p>
+		</f:for>
+	</f:then>
+	<f:else>
+		<f:translate key="labels.noComments" default="No comments yet" />
+	</f:else>
+</f:if>
+
+<f:form object="{comment}" name="comment" action="addComment" arguments="{job: job.uid, application: application.uid}">
+	<f:form.hidden property="reviewRound" value="{application.reviewRound}" />
+	<f:form.textarea cols="8" rows="8" property="body" />
+	<f:form.submit value="{f:translate(key: 'labels.form.commentButton', default: 'Send comment')}" />
+</f:form>

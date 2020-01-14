@@ -1,0 +1,223 @@
+
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<ROOT>
+		<type>array</type>
+		<el>
+			<switchableControllerActions>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.display</label>
+					<config>
+						<type>select</type>
+						<items type="array">
+							<numIndex index="0" type="array">
+								<numIndex index="0">LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.display.joblist</numIndex>
+								<numIndex index="1">Job->list</numIndex>
+							</numIndex>
+							<numIndex index="1" type="array">
+								<numIndex index="0">LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.display.jobdetails</numIndex>
+								<numIndex index="1">Job->show</numIndex>
+							</numIndex>
+							<numIndex index="2" type="array">
+								<numIndex index="0">LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.display.jobapplication</numIndex>
+								<numIndex index="1">Job->apply;Job->send;Job->validate;Job->upload</numIndex>
+							</numIndex>
+							<numIndex index="3" type="array">
+								<numIndex index="0">LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.display.management</numIndex>
+								<numIndex index="1">Job->review;Job->reviewApplications;Job->reviewApplication;Job->updateApplication;Job->applicantEmail;Job->addComment</numIndex>
+							</numIndex>
+							<numIndex index="4" type="array">
+								<numIndex index="0">LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.display.print</numIndex>
+								<numIndex index="1">Job->print</numIndex>
+							</numIndex>
+							<numIndex index="5" type="array">
+								<numIndex index="0">LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.display.email</numIndex>
+								<numIndex index="1">Job->applicantEmail</numIndex>
+							</numIndex>
+						</items>
+					</config>
+				</TCEforms>
+			</switchableControllerActions>
+			<settings.flexform.defaultStatus>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.defaultStatus</label>
+					<config>
+						<type>select</type>
+						<foreign_table>tx_jobseek_domain_model_status</foreign_table>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.defaultStatus>
+			<settings.flexform.styles>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.styles</label>
+					<config>
+						<type>group</type>
+						<internal_type>file</internal_type>
+						<allowed>css</allowed>
+						<minitems>0</minitems>
+						<maxitems>10</maxitems>
+						<size>6</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.styles>
+			<settings.flexform.listPageUid>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.listPageUid</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>pages</foreign_table>
+						<allowed>pages</allowed>
+						<minitems>0</minitems>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.listPageUid>
+			<settings.flexform.detailsPageUid>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.detailsPageUid</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>pages</foreign_table>
+						<allowed>pages</allowed>
+						<minitems>0</minitems>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.detailsPageUid>
+			<settings.flexform.applicationPageUid>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.applicationPageUid</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>pages</foreign_table>
+						<allowed>pages</allowed>
+						<minitems>0</minitems>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.applicationPageUid>
+			<settings.flexform.printPageUid>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.printPageUid</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>pages</foreign_table>
+						<allowed>pages</allowed>
+						<minitems>0</minitems>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.printPageUid>
+			<settings.flexform.receiptPageUid>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.receiptPageUid</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>pages</foreign_table>
+						<allowed>pages</allowed>
+						<minitems>0</minitems>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.receiptPageUid>
+			<settings.flexform.managementPageUid>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.managementPageUid</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>pages</foreign_table>
+						<allowed>pages</allowed>
+						<minitems>0</minitems>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.managementPageUid>
+			<settings.flexform.emailPageUid>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.emailPageUid</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>pages</foreign_table>
+						<allowed>pages</allowed>
+						<minitems>0</minitems>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.emailPageUid>
+			<settings.flexform.managementFrontendGroup>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.managementFrontendGroup</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>fe_groups</foreign_table>
+						<allowed>fe_groups</allowed>
+						<minitems>0</minitems>
+						<maxitems>10</maxitems>
+						<size>3</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.managementFrontendGroup>
+			<settings.flexform.reviewRoundAccess.1>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.reviewRoundAccess.1</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>fe_groups</foreign_table>
+						<allowed>fe_groups</allowed>
+						<minitems>0</minitems>
+						<maxitems>10</maxitems>
+						<size>3</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.reviewRoundAccess.1>
+			<settings.flexform.reviewRoundAccess.2>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.reviewRoundAccess.2</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>fe_groups</foreign_table>
+						<allowed>fe_groups</allowed>
+						<minitems>0</minitems>
+						<maxitems>10</maxitems>
+						<size>3</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.reviewRoundAccess.2>
+			<settings.flexform.reviewRoundAccess.3>
+				<TCEforms>
+					<label>LLL:EXT:jobseek/Resources/Private/Language/locallang_db.xml:flexform.reviewRoundAccess.3</label>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<foreign_table>fe_groups</foreign_table>
+						<allowed>fe_groups</allowed>
+						<minitems>0</minitems>
+						<maxitems>10</maxitems>
+						<size>3</size>
+					</config>
+				</TCEforms>
+			</settings.flexform.reviewRoundAccess.3>
+			
+		</el>
+	</ROOT>
+</T3DataStructure>

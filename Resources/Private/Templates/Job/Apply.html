@@ -1,0 +1,163 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+<f:layout name="Default" />
+
+
+<f:section name="Main">
+
+<fed:style href="{f:uri.resource(path: 'Stylesheet/Apply.css')}" />
+<fed:script src="{f:uri.resource(path: 'Javascripts/Apply.js')}" />
+
+<f:render partial="FormErrors" />
+
+<fed:form method="post" action="send" validate="TRUE" validateMethod="field" object="{applicant}" name="applicant" objectName="applicant" arguments="{job: job.uid}">
+	<div class="application-form">
+		<h3><f:translate key="section.personalDetails" default="Personal details" /></h3>
+		<div class="field-set">
+			<div class="field">
+				<label for="applicant-name" class="main"><f:translate key="tx_jobseek_domain_model_applicant.name" /></label>
+				<f:form.textfield type="text" property="name" id="applicant-name" class="text" />
+			</div>
+			<div class="field">
+				<label for="applicant-address" class="main"><f:translate key="tx_jobseek_domain_model_applicant.address" /></label>
+				<f:form.textfield type="text" property="address" id="applicant-address" class="text" />
+			</div>
+			<div class="field zip-city">
+				<label for="applicant-zip" class="main"><f:translate key="tx_jobseek_domain_model_applicant.zip" /></label>
+				<f:form.textfield type="text" property="zip" id="applicant-zip" />
+				<label for="applicant-city" class="sublabel small"><f:translate key="tx_jobseek_domain_model_applicant.city" /></label>
+				<f:form.textfield type="text" property="city" id="applicant-city" class="text" />
+			</div>
+			<div class="field">
+				<label for="applicant-telephone" class="main"><f:translate key="tx_jobseek_domain_model_applicant.telephone" /></label>
+				<f:form.textfield type="text" property="telephone" id="applicant-telephone" class="text" />
+			</div>
+			<div class="field">
+				<label for="applicant-mobile" class="main"><f:translate key="tx_jobseek_domain_model_applicant.mobile" /></label>
+				<f:form.textfield type="text" property="mobile" id="applicant-mobile" class="text" />
+			</div>
+			<div class="field">
+				<label for="applicant-email" class="main"><f:translate key="tx_jobseek_domain_model_applicant.email" /></label>
+				<f:form.textfield type="text" property="email" id="applicant-email" class="text" />
+			</div>
+			<div class="field">
+				<label for="applicant-birthday" class="main"><f:translate key="tx_jobseek_domain_model_applicant.birthday" /></label>
+				<f:form.textfield type="text" property="birthday" id="applicant-birthday" class="text" />
+			</div>
+		</div>
+
+		<h3><f:translate key="section.qualifications" default="Personal details" /></h3>
+		<div class="field-set">
+			<div class="field">
+				<label for="applicant-main-subject" class="main"><f:translate key="tx_jobseek_domain_model_applicant.main_subject" /></label>
+				<f:form.select options="{subjects}" property="mainSubject" optionLabelField="name" id="applicant-main-subject" />
+			</div>
+			<f:for each="{secondarySubjects}" as="selectedValue" iteration="looo">
+				<div class="field">
+					<label for="applicant-secondary-subjects-{loop.cycle}" class="main"><f:translate key="tx_jobseek_domain_model_applicant.secondary_subjects" /> {loop.cycle}</label>
+					<fed:form.select name="secondarySubjects" id="applicant-secondary-subjects-{loop.cycle}" value="{selectedValue}">
+						<f:for each="{subjects}" as="subject">
+							<fed:form.option value="{subject.uid}">{subject.name}</fed:form.option>
+						</f:for>
+					</fed:form.select>
+				</div>
+			</f:for>
+			<div class="field">
+				<label for="applicant-candidacy-passed" class="main"><f:translate key="tx_jobseek_domain_model_applicant.candidacy_passed" /></label>
+				<f:form.checkbox name="applicant[candidacyPassed]" value="1" class="checkbox"
+					checked="{f:if(condition: applicant.candidacyPassed, then: 'checked')}" id="applicant-candidacy-passed" />
+				<label for="applicant-candidacy-year" class="sublabel depends-on-applicant-candidacy-passed" >
+					<f:translate key="tx_jobseek_domain_model_applicant.candidacy_year" /></label>
+				<f:form.textfield property="candidacyYear" class="depends-on-applicant-candidacy-passed" />
+			</div>
+			<div class="field">
+				<label for="applicant-pedagogic-exam-passed" class="main"><f:translate key="tx_jobseek_domain_model_applicant.pedagogic_exam_passed" /></label>
+				<f:form.checkbox name="applicant[pedagogicExamPassed]" value="1" id="applicant-pedagogic-exam-passed" class="checkbox"
+					checked="{f:if(condition: applicant.pedagogicExamPassed, then: 'checked')}" />
+				<label for="applicant-pedagogic-exam-year" class="sublabel depends-on-applicant-pedagogic-exam-passed">
+					<f:translate key="tx_jobseek_domain_model_applicant.pedagogic_exam_year" /></label>
+				<f:form.textfield property="pedagogicExamYear" class="depends-on-applicant-pedagogic-exam-passed" />
+			</div>
+			<div class="field">
+				<label for="applicant-competences" class="main"><f:translate key="tx_jobseek_domain_model_applicant.competences" /></label>
+				<f:form.textarea property="competences" cols="8" rows="8" />
+			</div>
+			<div class="field">
+				<label for="applicant-experience" class="main"><f:translate key="tx_jobseek_domain_model_applicant.experience" /></label>
+				<f:form.textarea property="experience" cols="8" rows="8" />
+			</div>
+		</div>
+
+		<h3><f:translate key="section.employment" default="Employment history" /></h3>
+		<div class="field-set">
+			<fed:data.var name="amount" type="integer"><f:if condition="{applicant.employments}" then="{applicant.employments->f:count()}" else="1" /></fed:data.var>
+			<fed:form.group amount="{amount}" minimum="0" maximum="{settings.application.form.maximumEmploymentHistoryGroups}" property="employments" iteration="iteration">
+				<fed:form.group.exclude>
+					<label for="employment-selector" class="main">
+						<f:translate key="tx_jobseek_domain_model_applicant.employments" />
+					</label>
+					<fed:form.group.countSelector id="employment-selector" labelZero="{f:translate(key: 'labels.employments.zeroLabel')}" />
+				</fed:form.group.exclude>
+				<div class="field form-field-group-container">
+					<h6><f:translate key="tx_jobseek_domain_model_employment" /> {iteration.cycle}</h6>
+					<div class="field">
+						<label for="employment-{iteration.cycle}-employer" class="main">
+							<f:translate key="tx_jobseek_domain_model_employment.employer" />
+						</label>
+						<f:form.textfield property="{property.employer.name}" value="{property.employer.value}" id="employment-{iteration.cycle}-employer" />
+					</div>
+					<div class="field">
+						<label for="employment-{iteration.cycle}-since" class="main">
+							<f:translate key="tx_jobseek_domain_model_employment.since" />
+						</label>
+						<f:form.textfield property="{property.since.name}" value="{property.since.value}" id="employment-{iteration.cycle}-since" />
+					</div>
+					<div class="field">
+						<label for="employment-{iteration.cycle}-description" class="main">
+							<f:translate key="tx_jobseek_domain_model_employment.description" />
+						</label>
+						<f:form.textarea property="{property.description.name}" value="{property.description.value}" id="employment-{iteration.cycle}-description"
+							rows="8" cols="45" />
+					</div>
+				</div>
+			</fed:form.group>
+		</div>
+
+		<h3><f:translate key="section.application" default="Application" /></h3>
+		<div class="field-set">
+			<div class="field">
+				<label for="applicant-description" class="main"><f:translate key="tx_jobseek_domain_model_applicant.description" /></label>
+			</div>
+			<div class="field">
+				<f:form.textarea property="description" cols="8" rows="8" class="application" />
+			</div>
+		</div>
+
+		<h3><f:translate key="section.files" default="Files / CV" /></h3>
+		<div class="field-set">
+			<div clas="field">
+				<fed:form.multiUpload property="files" chunkSize="32mb" id="fileuploader" buttons="browse" autostart="TRUE" />
+			</div>
+		</div>
+
+		<h3><f:translate key="section.image" default="Image" /></h3>
+		<div class="field-set">
+			<div clas="field">
+				<fed:widget.imageCrop path="uploads/tx_jobseek/" src="{applicant.image}" uploader="imageuploader"
+					largeWidth="300" largeHeight="300" previewWidth="150" previewHeight="150"
+					maxWidth="340" maxHeight="300" sections="Preview,Button,Large"
+					cropButtonLabel="{f:translate(key: 'labels.crop')}"
+					resetButtonLabel="{f:translate(key: 'labels.reset')}"
+					memoryLimit="2048m"
+					/>
+			</div>
+			<div clas="field">
+				<fed:form.multiUpload property="image" chunkSize="32mb" id="imageuploader" buttons="browse" autostart="TRUE" resizeWidth="400" resizeHeight="400" />
+			</div>
+		</div>
+
+		<button type="submit"><f:translate key="labels.form.submit" /></button>
+
+	</div>
+</fed:form>
+</f:section>
+

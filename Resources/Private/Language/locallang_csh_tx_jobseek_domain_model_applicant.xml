@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_jobseek_domain_model_applicant</description>
+		<type>CSH</type>
+		<csh_table>tx_jobseek_domain_model_applicant</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+			<label index="name.description">name</label>
+			<label index="address.description">Address</label>
+			<label index="zip.description">Zip code</label>
+			<label index="city.description">City</label>
+			<label index="telephone.description">Telephone</label>
+			<label index="mobile.description">Mobile</label>
+			<label index="email.description">Email address</label>
+			<label index="birthday.description">Birthday</label>
+			<label index="candidacy_passed.description">Candidacy passed</label>
+			<label index="candidacy_year.description">Candidacy year</label>
+			<label index="pedagogic_exam_passed.description">Pedagogic exam passed</label>
+			<label index="pedagogic_exam_year.description">Birthday</label>
+			<label index="current_employment.description">Birthday</label>
+			<label index="current_employment_year.description">Birthday</label>
+			<label index="competences.description">Competences</label>
+			<label index="experience.description">Experience</label>
+			<label index="files.description">Files</label>
+			<label index="main_subject.description">Main subject area</label>
+			<label index="secondary_subjects.description">Secondary subject areas</label>
+		</languageKey>
+	</data>
+</T3locallang>

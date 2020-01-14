@@ -1,0 +1,9 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Main">
+<div class="job-show">
+	<f:render partial="Job/Properties" arguments="{job:job, dontLinkTitle: 1, dontLinkBody: 1}" />
+	<f:link.action action="apply" pageUid="{settings.flexform.applicationPageUid}" arguments="{job:job}" class="apply-link"><f:translate key="labels.applyForJob" default="Apply for job" /></f:link.action>
+</div>
+</f:section>
